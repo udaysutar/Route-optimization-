@@ -1,0 +1,121 @@
+id,ident,type,name,latitude_deg,longitude_deg,elevation_ft,continent,country_name,iso_country,region_name,iso_region,local_region,municipality,scheduled_service,gps_code,icao_code,iata_code
+26555,VIDP,large_airport,Indira Gandhi International Airport,28.55563,77.09519,777,AS,India,IN,Delhi (National Capital Territory),IN-DL,DL,New Delhi,1,VIDP,VIDP,DEL
+26434,VABB,large_airport,Chhatrapati Shivaji International Airport,19.08869934,72.86789703,39,AS,India,IN,Maharashtra,IN-MM,MM,Mumbai,1,VABB,VABB,BOM
+26618,VOMM,large_airport,Chennai International Airport,12.990005,80.169296,52,AS,India,IN,Tamil Nadu,IN-TN,TN,Chennai,1,VOMM,VOMM,MAA
+35145,VOBL,large_airport,Kempegowda International Airport,13.1979,77.706299,3000,AS,India,IN,Karnataka,IN-KA,KA,Bangalore,1,VOBL,VOBL,BLR
+26496,VECC,large_airport,Netaji Subhash Chandra Bose International Airport,22.654699,88.446701,16,AS,India,IN,West Bengal,IN-WB,WB,Kolkata,1,VECC,VECC,CCU
+35141,VOHS,large_airport,Rajiv Gandhi International Airport,17.231318,78.429855,2024,AS,India,IN,Telangana,IN-TG,TG,Hyderabad,1,VOHS,VOHS,HYD
+26444,VOGO,large_airport,Dabolim Airport,15.3808,73.831398,150,AS,India,IN,Goa,IN-GA,GA,Vasco da Gama,1,VOGO,VOGO,GOI
+26609,VOCI,large_airport,Cochin International Airport,10.151047,76.400838,30,AS,India,IN,Kerala,IN-KL,KL,Kochi,1,VOCI,VOCI,COK
+26629,VOTV,large_airport,Thiruvananthapuram International Airport,8.48212,76.920097,15,AS,India,IN,Kerala,IN-KL,KL,Thiruvananthapuram,1,VOTV,VOTV,TRV
+26431,VAAH,medium_airport,Sardar Vallabh Bhai Patel International Airport,23.0772,72.634697,189,AS,India,IN,Gujarat,IN-GJ,GJ,Ahmedabad,1,VAAH,VAAH,AMD
+26563,VIJP,medium_airport,Jaipur International Airport,26.8242,75.812202,1263,AS,India,IN,Rajasthan,IN-RJ,RJ,Jaipur,1,VIJP,VIJP,JAI
+26455,VAPO,medium_airport,Pune Airport / Lohagaon Air Force Station,18.5821,73.919701,1942,AS,India,IN,Maharashtra,IN-MM,MM,Pune,1,VAPO,VAPO,PNQ
+26545,VEBN,medium_airport,Lal Bahadur Shastri Airport,25.452129,82.861805,266,AS,India,IN,Uttar Pradesh,IN-UP,UP,Varanasi,1,VEBN,VEBN,VNS
+26540,VIAR,medium_airport,Sri Guru Ram Dass Jee International Airport,31.7096,74.797302,756,AS,India,IN,Punjab,IN-PB,PB,Amritsar,1,VIAR,VIAR,ATQ
+26438,VABO,medium_airport,Vadodara Airport,22.336201,73.226303,129,AS,India,IN,Gujarat,IN-GJ,GJ,Vadodara,1,VABO,VABO,BDQ
+26494,VEBS,medium_airport,Biju Patnaik Airport,20.24440002,85.81780243,138,AS,India,IN,Odisha,IN-OR,OR,Bhubaneswar,1,VEBS,VEBS,BBI
+26570,VILK,medium_airport,Chaudhary Charan Singh International Airport,26.76059914,80.88929749,410,AS,India,IN,Uttar Pradesh,IN-UP,UP,Lucknow,1,VILK,VILK,LKO
+26617,VOML,medium_airport,Mangalore International Airport,12.9612999,74.89009857,337,AS,India,IN,Karnataka,IN-KA,KA,Mangalore,1,VOML,VOML,IXE
+26607,VOCB,medium_airport,Coimbatore International Airport,11.02999973,77.04340363,1324,AS,India,IN,Tamil Nadu,IN-TN,TN,Coimbatore,1,VOCB,VOCB,CJB
+26610,VOCL,medium_airport,Calicut International Airport,11.1368,75.955299,342,AS,India,IN,Kerala,IN-KL,KL,Calicut,1,VOCL,VOCL,CCJ
+26562,VIJO,medium_airport,Jodhpur Airport,26.25110054,73.04889679,717,AS,India,IN,Rajasthan,IN-RJ,RJ,Jodhpur,1,VIJO,VIJO,JDH
+26620,VOPB,medium_airport,Veer Savarkar International Airport / INS Utkrosh,11.641208,92.729643,13,AS,India,IN,Andaman and Nicobar Islands,IN-AN,AN,Port Blair,1,VOPB,VOPB,IXZ
+26615,VOHY,medium_airport,Begumpet Airport,17.4531,78.467598,1742,AS,India,IN,Telangana,IN-TG,TG,Hyderabad,0,VOHY,VOHY,BPM
+26550,VICG,medium_airport,Chandigarh International Airport,30.6735,76.788498,1012,AS,India,IN,Chandigarh,IN-CH,CH,Chandigarh,1,VICG,VICG,IXC
+26501,VEGT,medium_airport,Lokpriya Gopinath Bordoloi International Airport,26.10610008,91.58589935,162,AS,India,IN,Assam,IN-AS,AS,Guwahati,1,VEGT,VEGT,GAU
+26569,VILH,medium_airport,Leh Kushok Bakula Rimpochee Airport,34.135899,77.546501,10682,AS,India,IN,Ladakh,IN-LA,LA,Leh,1,VILH,VILH,IXL
+26491,VEBD,medium_airport,Bagdogra Airport,26.68120003,88.32859802,412,AS,India,IN,West Bengal,IN-WB,WB,Siliguri,1,VEBD,VEBD,IXB
+26446,VAID,medium_airport,Devi Ahilyabai Holkar Airport,22.72179985,75.80110168,1850,AS,India,IN,Madhya Pradesh,IN-MP,MP,Indore,1,VAID,VAID,IDR
+26616,VOMD,medium_airport,Madurai Airport,9.83450985,78.09339905,459,AS,India,IN,Tamil Nadu,IN-TN,TN,Madurai,1,VOMD,VOMD,IXM
+26517,VEPT,medium_airport,Jay Prakash Narayan Airport,25.591299,85.087997,170,AS,India,IN,Bihar,IN-BR,BR,Patna,1,VEPT,VEPT,PAT
+26578,VISR,medium_airport,Sheikh ul Alam International Airport,33.987099,74.7742,5429,AS,India,IN,Jammu and Kashmir,IN-JK,JK,Srinagar,1,VISR,VISR,SXR
+26462,VAUD,medium_airport,Maharana Pratap Airport,24.61770058,73.89610291,1684,AS,India,IN,Rajasthan,IN-RJ,RJ,Udaipur,1,VAUD,VAUD,UDR
+26453,VANP,medium_airport,Dr. Babasaheb Ambedkar International Airport,21.092199,79.047203,1033,AS,India,IN,Maharashtra,IN-MM,MM,Nagpur,1,VANP,VANP,NAG
+26461,VASU,medium_airport,Surat Airport,21.1141,72.741798,16,AS,India,IN,Gujarat,IN-GJ,GJ,Surat,1,VASU,VASU,STV
+26439,VABP,medium_airport,Raja Bhoj International Airport,23.28750038,77.33740234,1711,AS,India,IN,Madhya Pradesh,IN-MP,MP,Bhopal,1,VABP,VABP,BHO
+26436,VABJ,medium_airport,Bhuj Airport,23.28779984,69.67019653,268,AS,India,IN,Gujarat,IN-GJ,GJ,Bhuj,1,VABJ,VABJ,BHJ
+26606,VOBZ,medium_airport,Vijayawada Airport,16.530399,80.796799,82,AS,India,IN,Andhra Pradesh,IN-AP,AP,Gannavaram,1,VOBZ,VOBZ,VGA
+26627,VOTP,small_airport,Tirupati Airport,13.63249969,79.54329681,350,AS,India,IN,Andhra Pradesh,IN-AP,AP,Tirupati,1,VOTP,VOTP,TIR
+26433,VAAU,medium_airport,Aurangabad Airport,19.86269951,75.39810181,1911,AS,India,IN,Maharashtra,IN-MM,MM,Aurangabad,1,VAAU,VAAU,IXU
+26565,VIJU,medium_airport,Jammu Airport,32.688849,74.838152,996,AS,India,IN,Jammu and Kashmir,IN-JK,JK,Jammu,1,VIJU,VIJU,IXJ
+26519,VERC,medium_airport,Birsa Munda Airport,23.31430054,85.32170105,2148,AS,India,IN,Jharkhand,IN-JH,JH,Ranchi,1,VERC,VERC,IXR
+26537,VIAG,medium_airport,Agra Airport / Agra Air Force Station,27.157683,77.960942,551,AS,India,IN,Uttar Pradesh,IN-UP,UP,Agra,1,VIAG,VIAG,AGR
+26512,VEMN,medium_airport,Dibrugarh Airport,27.48390007,95.01689911,362,AS,India,IN,Assam,IN-AS,AS,Dibrugarh,1,VEMN,VEMN,DIB
+329504,VOKN,medium_airport,Kannur International Airport,11.918614,75.547211,330,AS,India,IN,Kerala,IN-KL,KL,Kannur,1,VOKN,VOKN,CNN
+26546,VIBR,medium_airport,Kullu Manali Airport,31.876699,77.154404,3573,AS,India,IN,Himachal Pradesh,IN-HP,HP,Bhuntar,0,VIBR,VIBR,KUU
+26489,VEAT,medium_airport,Agartala - Maharaja Bir Bikram Airport,23.886999,91.240402,46,AS,India,IN,Tripura,IN-TR,TR,Agartala,1,VEAT,VEAT,IXA
+26440,VABV,medium_airport,Bhavnagar Airport,21.75219917,72.18520355,44,AS,India,IN,Gujarat,IN-GJ,GJ,Bhavnagar,1,VABV,VABV,BHU
+26504,VEIM,medium_airport,Imphal Airport,24.76000023,93.896698,2540,AS,India,IN,Manipur,IN-MN,MN,Imphal,1,VEIM,VEIM,IMF
+26447,VAJB,medium_airport,Jabalpur Airport,23.177799,80.052002,1624,AS,India,IN,Madhya Pradesh,IN-MP,MP,Jabalpur,1,VAJB,VAJB,JLR
+26507,VEJT,medium_airport,Jorhat Airport,26.73150063,94.17549896,311,AS,India,IN,Assam,IN-AS,AS,Jorhat,1,VEJT,VEJT,JRH
+26623,VORY,medium_airport,Rajahmundry Airport,17.105799,81.813204,151,AS,India,IN,Andhra Pradesh,IN-AP,AP,Madhurapudi,1,VORY,VORY,RJA
+26458,VARK,medium_airport,Rajkot Airport,22.30920029,70.77950287,441,AS,India,IN,Gujarat,IN-GJ,GJ,Rajkot,1,VARK,VARK,RAJ
+3301,VAOZ,medium_airport,Nashik Airport,20.119101,73.912903,1900,AS,India,IN,Maharashtra,IN-MM,MM,Nasik,1,VAOZ,VAOZ,ISK
+26576,VISM,small_airport,Shimla Airport,31.0818,77.068001,5072,AS,India,IN,Himachal Pradesh,IN-HP,HP,Jubbarhatti,0,VISM,VISM,SLV
+26554,VIDN,medium_airport,Dehradun Jolly Grant Airport,30.189243,78.176651,1831,AS,India,IN,Uttarakhand,IN-UT,UT,Dehradun (Jauligrant),1,VIDN,VIDN,DED
+26448,VAJM,medium_airport,Jamnagar Airport,22.46549988,70.01260376,69,AS,India,IN,Gujarat,IN-GJ,GJ,Jamnagar,1,VAJM,VAJM,JGA
+26509,VEKU,medium_airport,Silchar Airport,24.91290092,92.97869873,352,AS,India,IN,Assam,IN-AS,AS,Silchar,1,VEKU,VEKU,IXS
+26602,VOAT,medium_airport,Agatti Airport,10.8237,72.176003,14,AS,India,IN,Lakshadweep,IN-LD,LD,Agatti,1,VOAT,VOAT,AGX
+3319,VEDH,medium_airport,Darbhanga Airport,26.192801,85.916901,156,AS,India,IN,Bihar,IN-BR,BR,Darbhanga,1,VEDH,VEDH,DBR
+26452,VAKS,medium_airport,Keshod Airport,21.317101,70.270401,167,AS,India,IN,Gujarat,IN-GJ,GJ,Keshod,1,VAKS,VAKS,IXK
+26622,VOPN,medium_airport,Sri Sathya Sai Airport,14.14929962,77.79109955,1558,AS,India,IN,Andhra Pradesh,IN-AP,AP,Puttaparthi,0,VOPN,VOPN,PUT
+26502,VEGY,medium_airport,Gaya Airport,24.744301,84.951202,380,AS,India,IN,Bihar,IN-BR,BR,Gaya,1,VEGY,VEGY,GAY
+26558,VIGR,medium_airport,Gwalior Airport,26.29330063,78.22779846,617,AS,India,IN,Madhya Pradesh,IN-MP,MP,Gwalior,1,VIGR,VIGR,GWL
+26456,VAPR,medium_airport,Porbandar Airport,21.649524,69.656405,23,AS,India,IN,Gujarat,IN-GJ,GJ,Porbandar,1,VAPR,VAPR,PBD
+26628,VOTR,medium_airport,Tiruchirappalli International Airport,10.766223,78.71774,288,AS,India,IN,Tamil Nadu,IN-TN,TN,Tiruchirappalli,1,VOTR,VOTR,TRZ
+26510,VELP,medium_airport,Lengpui Airport,23.840599,92.619698,1398,AS,India,IN,Mizoram,IN-MZ,MZ,Aizawl (Lengpui),1,VELP,VELP,AJL
+317982,VEDG,medium_airport,Kazi Nazrul Islam Airport,23.6225,87.243,300,AS,India,IN,West Bengal,IN-WB,WB,Durgapur,1,VEDG,VEDG,RDP
+26449,VAKE,medium_airport,Kandla Airport,23.1127,70.100304,96,AS,India,IN,Gujarat,IN-GJ,GJ,Kandla,1,VAKE,VAKE,IXY
+26506,VEJS,medium_airport,Sonari Airport,22.813786,86.169739,475,AS,India,IN,Jharkhand,IN-JH,JH,Jamshedpur,0,VEJS,VEJS,IXW
+312234,VEDO,small_airport,Deoghar Airport,24.446842,86.704955,361,AS,India,IN,Jharkhand,IN-JH,JH,Deoghar,1,VEDO,VEDO,DGH
+26451,VAKP,medium_airport,Kolhapur Airport,16.6647,74.289398,1996,AS,India,IN,Maharashtra,IN-MM,MM,Kolhapur,1,VAKP,VAKP,KLH
+26492,VEBI,medium_airport,Shillong Airport,25.70359993,91.97869873,2910,AS,India,IN,Meghalaya,IN-ML,ML,Shillong,1,VEBI,VEBI,SHL
+26435,VEBU,medium_airport,Bilaspur Airport,21.9884,82.111,899,AS,India,IN,Chhattisgarh,IN-CT,CT,Bilaspur,1,VEBU,VEBU,PAB
+26559,VIHR,medium_airport,Hisar Airport,29.179399,75.755302,700,AS,India,IN,Haryana,IN-HR,HR,Hisar,1,VIHR,VIHR,HSS
+26611,VOCP,medium_airport,Kadapa Airport,14.513154,78.769183,430,AS,India,IN,Andhra Pradesh,IN-AP,AP,Kadapa,1,VOCP,VOCP,CDP
+26557,VIGG,medium_airport,Kangra Airport,32.164902,76.263018,2525,AS,India,IN,Himachal Pradesh,IN-HP,HP,Kangra,1,VIGG,VIGG,DHM
+26571,VIPK,medium_airport,Pathankot Airport,32.233611,75.634444,1017,AS,India,IN,Punjab,IN-PB,PB,Pathankot,1,VIPK,VIPK,IXP
+26604,VOBI,medium_airport,Bellary Airport,15.16279984,76.88279724,30,AS,India,IN,Karnataka,IN-KA,KA,Bellary,0,VOBI,VOBI,BEP
+26508,VEKR,medium_airport,Kailashahar Airport,24.308657,92.00768,79,AS,India,IN,Tripura,IN-TR,TR,Kailashahar,0,VEKR,VEKR,IXH
+26567,VIKO,medium_airport,Kota Airport,25.16020012,75.84559631,896,AS,India,IN,Rajasthan,IN-RJ,RJ,Kota,0,VIKO,VIKO,KTU
+26520,VERK,medium_airport,Rourkela Airport,22.256571,84.815193,659,AS,India,IN,Odisha,IN-OR,OR,Rourkela,0,VERK,VERK,RRK
+26556,VIDX,small_airport,Hindon Airport / Hindon Air Force Station,28.707701,77.358902,700,AS,India,IN,Uttar Pradesh,IN-UP,UP,Ghaziabad,1,VIDX,VIDX,HDO
+3303,VAJL,small_airport,Jalgaon Airport,20.962678,75.627492,818,AS,India,IN,Maharashtra,IN-MM,MM,Jalgaon,1,VAJL,VAJL,JLG
+31996,VOMY,small_airport,Mysore Airport,12.23,76.655833,2349,AS,India,IN,Karnataka,IN-KA,KA,Mysore,1,VOMY,VOMY,MYQ
+32206,VEBG,small_airport,Balurghat Airport,25.2617,88.795601,78,AS,India,IN,West Bengal,IN-WB,WB,Balurghat,0,VEBG,VEBG,RGH
+31691,VEKW,small_airport,Khowai Airport,24.061899,91.603897,95,AS,India,IN,Tripura,IN-TR,TR,Khowai,0,VEKW,VEKW,IXN
+31799,VEMH,small_airport,Malda Airport,25.01018,88.126917,79,AS,India,IN,West Bengal,IN-WB,WB,Malda,0,VEMH,VEMH,LDA
+30005,VEKM,small_airport,Kamalpur Airport,24.134325,91.810769,131,AS,India,IN,Tripura,IN-TR,TR,Manik Bhandar,0,VEKM,VEKM,IXQ
+31692,VEPG,small_airport,Pasighat Airport,28.064786,95.336952,477,AS,India,IN,Arunachal Pradesh,IN-AR,AR,Pasighat,0,VEPG,VEPG,IXT
+32433,VETJ,small_airport,Tezu Airport,27.94120026,96.13439941,800,AS,India,IN,Arunachal Pradesh,IN-AR,AR,Tezu,0,VETJ,VETJ,TEI
+26626,VOTJ,small_airport,Thanjavur Air Force Station,10.723835,79.109457,253,AS,India,IN,Tamil Nadu,IN-TN,TN,Thanjavur,0,VOTJ,VOTJ,TJV
+301040,VOJV,small_airport,Jindal Vijaynagar Airport,15.175921,76.63303,1670,AS,India,IN,Karnataka,IN-KA,KA,Toranagallu,0,VOJV,VOJV,VDY
+342094,VOGA,large_airport,Manohar International Airport,15.744257,73.860625,552,AS,India,IN,Goa,IN-GA,GA,Mopa,1,VOGA,VOGA,GOX
+512065,VAHS,large_airport,Rajkot International Airport,22.378824,71.039391,647,AS,India,IN,Gujarat,IN-GJ,GJ,Rajkot,0,VAHS,VAHS,HSR
+26513,VEMR,medium_airport,Dimapur Airport,25.88389969,93.77110291,487,AS,India,IN,Nagaland,IN-NL,NL,Dimapur,1,VEMR,VEMR,DMU
+26511,VELR,medium_airport,Lilabari North Lakhimpur Airport,27.2955,94.097603,330,AS,India,IN,Assam,IN-AS,AS,Lilabari,1,VELR,VELR,IXI
+26549,VIBY,medium_airport,Bareilly Air Force Station,28.4221,79.450798,580,AS,India,IN,Uttar Pradesh,IN-UP,UP,Bareilly,1,VIBY,VIBY,BEK
+26500,VEGK,medium_airport,Gorakhpur Airport,26.73970032,83.4496994,259,AS,India,IN,Uttar Pradesh,IN-UP,UP,Gorakhpur,1,VEGK,VEGK,GOP
+3341,VALT,medium_airport,Murod Kond Airport,18.411501,76.464699,2136,AS,India,IN,Maharashtra,IN-MM,MM,Latur,1,VALT,VALT,LTU
+340146,VOKU,medium_airport,Kurnool Airport,15.716288,78.16923,920,AS,India,IN,Andhra Pradesh,IN-AP,AP,Orvakal,1,VOKU,VOKU,KJB
+26573,VIPT,medium_airport,Pantnagar Airport,29.0334,79.473701,769,AS,India,IN,Uttar Pradesh,IN-UP,UP,Pantnagar,1,VIPT,VIPT,PGH
+26621,VOPC,medium_airport,Pondicherry Airport,11.968,79.812,134,AS,India,IN,Pondicherry,IN-PY,PY,Puducherry (Pondicherry),1,VOPC,VOPC,PNY
+26432,VAAK,medium_airport,Akola Airport,20.698931,77.056883,999,AS,India,IN,Maharashtra,IN-MM,MM,Akola,0,VAAK,VAAK,AKD
+26543,VIBK,medium_airport,Nal Airport,28.070601,73.207199,750,AS,India,IN,Rajasthan,IN-RJ,RJ,Bikaner,0,VIBK,VIBK,BKB
+26441,VADN,medium_airport,Daman Airport,20.434401,72.843201,33,AS,India,IN,Dadra and Nagar Haveli and Daman and Diu,IN-DH,DH,Daman,0,VADN,VADN,NMB
+26612,VOCX,medium_airport,Car Nicobar Air Force Base,9.153056,92.819273,5,AS,India,IN,Andaman and Nicobar Islands,IN-AN,AN,IAF Camp,0,VOCX,VOCX,CBD
+26514,VEMZ,medium_airport,Muzaffarpur Airport,26.119101,85.313698,174,AS,India,IN,Bihar,IN-BR,BR,Muzaffarpur,0,VEMZ,VEMZ,MZU
+26624,VOSM,medium_airport,Salem Airport,11.7833004,78.06559753,1008,AS,India,IN,Tamil Nadu,IN-TN,TN,Salem,0,VOSM,VOSM,SXV
+26460,VASL,medium_airport,Solapur Airport,17.62800026,75.93479919,1584,AS,India,IN,Maharashtra,IN-MM,MM,Solapur,0,VASL,VASL,SSE
+26524,VEZO,medium_airport,Ziro Airport,27.588301,93.828102,5403,AS,India,IN,Arunachal Pradesh,IN-AR,AR,Ziro,0,VEZO,VEZO,ZER
+26542,VIAX,small_airport,Adampur Airport,31.4338,75.758797,775,AS,India,IN,Punjab,IN-PB,PB,Adampur,1,VIAX,VIAX,AIP
+506610,VOGB,small_airport,Kalaburagi Airport,17.308154,76.965246,1571,AS,India,IN,Karnataka,IN-KA,KA,Kalaburagi,1,VOGB,VOGB,GBI
+3342,VOTK,small_airport,Tuticorin Airport,8.724241,78.025803,129,AS,India,IN,Tamil Nadu,IN-TN,TN,Vagaikulam,1,VOTK,VOTK,TCR
+26497,VECO,small_airport,Cooch Behar Airport,26.3305,89.467201,138,AS,India,IN,West Bengal,IN-WB,WB,Cooch Behar,0,VECO,VECO,COH
+44474,VEDZ,small_airport,Daporijo Airport,27.98550034,94.22280121,750,AS,India,IN,Arunachal Pradesh,IN-AR,AR,Daporijo,0,VEDZ,VEDZ,DEP
+32183,VEJP,small_airport,Jeypore Airport,18.879999,82.552002,1952,AS,India,IN,Odisha,IN-OR,OR,Jeypore,0,VEJP,VEJP,PYB
+42723,VONV,small_airport,Neyveli Airport,11.612956,79.527382,184,AS,India,IN,Tamil Nadu,IN-TN,TN,Neyveli,0,VONV,VONV,NVY
+313997,VORG,small_airport,Basanth Nagar Airport,18.701,79.3923,670,AS,India,IN,Telangana,IN-TG,TG,Ramagundam,0,VORG,VORG,RMD
+30356,VERU,small_airport,Rupsi Airport,26.141867,89.907892,131,AS,India,IN,Assam,IN-AS,AS,Rupsi,0,VERU,VERU,RUP
+32647,VOWA,small_airport,Warangal Airport,17.9144,79.602203,935,AS,India,IN,Telangana,IN-TG,TG,Warangal,0,VOWA,VOWA,WGC
