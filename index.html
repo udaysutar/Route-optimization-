@@ -16,17 +16,17 @@
   <div class="sidebar">
     <h2>Upload CSV & Configure</h2>
 
-    <label for="csvUpload">Airports CSV</label>
-    <input type="file" id="csvUpload" accept=".csv" />
+    <label  for="csvUpload">Airports CSV</label>
+    <input  style="background-color: rgb(121, 198, 236);" style="color: black;"  type="file" id="csvUpload" accept=".csv" />
 
     <label for="demandUpload">Demand CSV (optional)</label>
-    <input type="file" id="demandUpload" accept=".csv" />
+    <input style="background-color: rgb(121, 198, 236);" type="file" id="demandUpload" accept=".csv" />
     <small>
       Columns: <code>ident, demand, avgFare</code>
     </small>
 
     <label for="aircraftUpload">Aircraft Types CSV</label>
-    <input type="file" id="aircraftUpload" accept=".csv" />
+    <input style="background-color: rgb(121, 198, 236);" type="file" id="aircraftUpload" accept=".csv" />
     <small>
       Columns: <code>type, display_name, etc.</code>
     </small>
@@ -70,14 +70,18 @@
             <tr>
               <th>From</th>
               <th>To</th>
-              <th>Distance (km)</th>
+              <th style="text-align: center;">Distance(km)</th>
+              <th style="text-align: center;">Passenger Count</th>
+            
+              <th>Revenue(Rs)</th>
+              <th>Cost</th>
               <th>Segment Profit</th>
             </tr>
           </thead>
           <tbody></tbody>
           <tfoot>
             <tr>
-              <td colspan="2">Totals</td>
+              <td colspan="5">Totals</td>
               <td id="totalDistanceCell"></td>
               <td id="totalProfitCell"></td>
             </tr>
