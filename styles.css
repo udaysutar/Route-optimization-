@@ -1,0 +1,203 @@
+/* --- General Layout & Typography --- */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+header {
+    background-color: #003366;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 1001;
+}
+
+.container {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* --- Sidebar Controls --- */
+.sidebar {
+    width: 350px;
+    padding: 20px;
+    background-color: #ffffff;
+    overflow-y: auto;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sidebar h2 {
+    font-size: 1.3rem;
+    margin-top: 0;
+    color: #003366;
+    border-bottom: 2px solid #005a9e;
+    padding-bottom: 8px;
+}
+
+.sidebar label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: -5px;
+}
+
+.sidebar small {
+    font-size: 0.75rem;
+    color: #666;
+    margin-top: -8px;
+}
+
+input[type="file"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+}
+
+input[type="file"] {
+    padding: 4px;
+}
+
+.input-group,
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+.intermediate-stop {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.intermediate-stop select {
+    flex: 1;
+}
+.intermediate-stop button {
+    padding: 4px 8px;
+    background-color: #fce8e6;
+    color: #c5221f;
+    border: 1px solid #f9bdbb;
+    border-radius: 50%;
+    cursor: pointer;
+    line-height: 1;
+}
+
+/* --- Buttons --- */
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#addIntermediateBtn {
+    background-color: #e8f0fe;
+    color: #1967d2;
+    border: 1px solid #d2e3fc;
+}
+#addIntermediateBtn:hover {
+    background-color: #d2e3fc;
+}
+
+#drawRouteBtn, #optimizeRouteBtn {
+    flex: 1;
+    background-color: #005a9e;
+    color: white;
+}
+#drawRouteBtn:hover, #optimizeRouteBtn:hover {
+    background-color: #004a80;
+}
+
+#resetBtn {
+    background-color: #fde2e2;
+    color: #b3261e;
+    border: 1px solid #f9bdbb;
+}
+#resetBtn:hover {
+    background-color: #f7c5c2;
+}
+
+
+/* --- Info Box & Table --- */
+#infoBox {
+    margin-top: 10px;
+    padding: 12px;
+    background-color: #eef1f3;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    white-space: pre-wrap; /* Allows line breaks */
+}
+
+#distanceTableContainer {
+    margin-top: auto; /* Pushes table to the bottom */
+}
+
+#distanceTableContainer h3 {
+    margin: 10px 0 5px 0;
+    font-size: 1rem;
+}
+
+.table-wrapper {
+    max-height: 250px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#distanceTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+}
+
+#distanceTable th,
+#distanceTable td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+#distanceTable th:nth-child(3),
+#distanceTable td:nth-child(3),
+#distanceTable th:nth-child(4),
+#distanceTable td:nth-child(4) {
+    text-align: right;
+}
+
+#distanceTable thead th {
+    background-color: #f7f7f7;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+}
+
+#distanceTable tfoot td {
+    font-weight: 700;
+    border-top: 2px solid #ccc;
+    background-color: #f7f7f7;
+}
+
+/* --- Map --- */
+#map {
+    flex: 1;
+    height: 100%;
+    z-index: 1;
+}

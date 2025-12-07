@@ -1,0 +1,16 @@
+type,display_name,manufacturer,cruise_speed_kmh,typical_range_km,passenger_capacity
+A320,Airbus A320,Airbus,828,6100,150-186
+A321,Airbus A321,Airbus,828,7400,185-236
+A330,Airbus A330-300,Airbus,871,10900,250-300
+A350,Airbus A350-900,Airbus,903,15000,300-350
+A380,Airbus A380,Airbus,900,15200,500-850
+B738,Boeing 737-800,Boeing,842,5430,162-189
+B739,Boeing 737-900ER,Boeing,842,6300,180-220
+B752,Boeing 757-200,Boeing,850,7100,200-239
+B772,Boeing 777-200ER,Boeing,905,9700,314-396
+B77W,Boeing 777-300ER,Boeing,905,13650,350-550
+B787,Boeing 787-9 Dreamliner,Boeing,913,14140,242-290
+E195,Embraer E195-E2,Embraer,830,4800,120-146
+CRJ900,Bombardier CRJ900,Bombardier,830,3200,76-90
+ATR72,ATR 72-600,ATR,510,1500,68-78
+SJ100,Sukhoi Superjet 100,Sukhoi,830,4500,87-108

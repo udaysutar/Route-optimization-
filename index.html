@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hub & Spoke Route Optimizer (Profit-aware)</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header>Route Optimization System — Profit & Constraints</header>
+
+<div class="container">
+  <div class="sidebar">
+    <h2>Upload CSV & Configure</h2>
+
+    <label for="csvUpload">Airports CSV</label>
+    <input type="file" id="csvUpload" accept=".csv" />
+
+    <label for="demandUpload">Demand CSV (optional)</label>
+    <input type="file" id="demandUpload" accept=".csv" />
+    <small>
+      Columns: <code>ident, demand, avgFare</code>
+    </small>
+
+    <label for="aircraftUpload">Aircraft Types CSV</label>
+    <input type="file" id="aircraftUpload" accept=".csv" />
+    <small>
+      Columns: <code>type, display_name, etc.</code>
+    </small>
+
+    <label for="aircraftSelect">Aircraft Type</label>
+    <select id="aircraftSelect">
+      </select>
+
+    <label for="windDir">Wind</label>
+    <div class="input-group">
+      <input id="windDir" type="number" placeholder="Dir° (0=N)" min="0" max="360" />
+      <input id="windSpeed" type="number" placeholder="Speed (kn)" min="0" />
+    </div>
+
+    <label for="optMode">Optimization</label>
+    <select id="optMode">
+      <option value="dijkstra">Shortest Distance</option>
+      <option value="ga_profit">Maximize Profit (Genetic Algorithm)</option>
+    </select>
+
+    <label for="sourceSelect">Route</label>
+    <select id="sourceSelect"><option value="">Select Source</option></select>
+    <div id="intermediateSelects"></div>
+    <button id="addIntermediateBtn">Add Intermediate Stop</button>
+    <select id="destinationSelect"><option value="">Select Destination</option></select>
+
+    <div class="button-group">
+      <button id="drawRouteBtn">Draw Manual Route</button>
+      <button id="optimizeRouteBtn">Find Optimized Route</button>
+    </div>
+
+    <button id="resetBtn">Reset</button>
+
+    <div id="infoBox" aria-live="polite"></div>
+
+    <div id="distanceTableContainer">
+      <h3>Segment Details</h3>
+      <div class="table-wrapper">
+        <table id="distanceTable">
+          <thead>
+            <tr>
+              <th>From</th>
+              <th>To</th>
+              <th>Distance (km)</th>
+              <th>Segment Profit</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+          <tfoot>
+            <tr>
+              <td colspan="2">Totals</td>
+              <td id="totalDistanceCell"></td>
+              <td id="totalProfitCell"></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="map"></div>
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
