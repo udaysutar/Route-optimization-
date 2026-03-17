@@ -8,17 +8,16 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body> // This is the main HTML file for the Route Optimization System. It includes:
-// - A header for the title of the application.
+<body>
 
-<header>Route Optimization System — Profit & Constraints</header>
+<header>Route Optimization System - Profit & Constraints</header>
 
 <div class="container">
   <div class="sidebar">
     <h2>Upload CSV & Configure</h2>
 
     <label  for="csvUpload">Airports CSV</label>
-    <input  style="background-color: rgb(121, 198, 236);" style="color: black;"  type="file" id="csvUpload" accept=".csv" />
+    <input style="background-color: rgb(121, 198, 236); color: black;" type="file" id="csvUpload" accept=".csv" />
 
     <label for="demandUpload">Demand CSV (optional)</label>
     <input style="background-color: rgb(121, 198, 236);" type="file" id="demandUpload" accept=".csv" />
@@ -36,11 +35,12 @@
     <select id="aircraftSelect">
       </select>
 
-    <label for="windDir">Wind</label>
-    <div class="input-group">
-      <input id="windDir" type="number" placeholder="Dir° (0=N)" min="0" max="360" />
-      <input id="windSpeed" type="number" placeholder="Speed (kn)" min="0" />
-    </div>
+    <label for="weatherUpload">Weather Dataset CSV</label>
+    <input style="background-color: rgb(121, 198, 236);" type="file" id="weatherUpload" accept=".csv" />
+    <div id="weatherStatus" class="status-pill">Loading weather dataset...</div>
+    <small>
+      Columns: <code>ident, windSpeed, windDirection, weatherType, visibility, temperature</code>
+    </small>
 
     <label for="optMode">Optimization</label>
     <select id="optMode">
@@ -74,7 +74,7 @@
               <th style="text-align: center;">Distance(km)</th>
               <th style="text-align: center;">Passenger Count</th>
             
-              <th>Revenue(Rs)</th>
+              <th>Revenue (Rs)</th>
               <th>Cost</th>
               <th>Segment Profit</th>
             </tr>

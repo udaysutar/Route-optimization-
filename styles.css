@@ -59,6 +59,15 @@ header {
     margin-top: -8px;
 }
 
+.status-pill {
+    background-color: #eef1f3;
+    border: 1px solid #d7dce0;
+    border-radius: 999px;
+    padding: 6px 10px;
+    font-size: 0.85rem;
+    color: #243b53;
+}
+
 input[type="file"],
 input[type="number"],
 select {
@@ -97,6 +106,7 @@ input[type="file"] {
     border-radius: 50%;
     cursor: pointer;
     line-height: 1;
+    min-width: 28px;
 }
 
 /* --- Buttons --- */
@@ -203,4 +213,20 @@ button {
     flex: 1;
     height: 100%;
     z-index: 1;
+}
+
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #971e1e;
+    }
+
+    #map {
+        height: 60vh;
+    }
 }
