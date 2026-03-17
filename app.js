@@ -15,8 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const demandUpload = document.getElementById('demandUpload');
     const aircraftUpload = document.getElementById('aircraftUpload');
     const aircraftSelect = document.getElementById('aircraftSelect');
-    const windDirInput = document.getElementById('windDir');
-    const windSpeedInput = document.getElementById('windSpeed');
     const optModeSelect = document.getElementById('optMode');
     const sourceSelect = document.getElementById('sourceSelect');
     const intermediateSelectsContainer = document.getElementById('intermediateSelects');
@@ -39,6 +37,23 @@ document.addEventListener('DOMContentLoaded', () => {
     resetBtn.addEventListener('click', resetApplication);
 
     aircraftSelect.innerHTML = '<option value="">Upload Aircraft CSV</option>';
+
+    // ✅ SMART COST FUNCTION
+    function calculateSmartCost(metrics) {
+        const w_time = 0.4;
+        const w_cost = 0.3;
+        const w_demand = 0.2;
+        const w_risk = 0.1;
+
+        const delayRisk = Math.random() * 0.3;
+
+        return (
+            (w_time * metrics.time) +
+            (w_cost * metrics.cost) -
+            (w_demand * metrics.passengers) +
+            (w_risk * delayRisk)
+        );
+    }
 
     function handleFileUpload(e, type) {
         const file = e.target.files[0];
@@ -118,11 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let intermediateCodes = Array.from(intermediateSelectsContainer.querySelectorAll('select'))
             .map(s => s.value).filter(v => v);
 
-        // ✅ FIX: remove duplicates INCLUDING consecutive duplicates
         intermediateCodes = [...new Set(intermediateCodes)];
-        if (intermediateCodes.includes(sourceCode) || intermediateCodes.includes(destCode)) {
-            intermediateCodes = intermediateCodes.filter(x => x !== sourceCode && x !== destCode);
-        }
 
         const aircraft = aircraftData[aircraftSelect.value];
 
@@ -135,9 +146,9 @@ document.addEventListener('DOMContentLoaded', () => {
             displayRoute([sourceCode, ...intermediateCodes, destCode], aircraft);
         } else {
             if (optModeSelect.value === 'dijkstra') {
-                displayRoute(findShortestPath(sourceCode, destCode, intermediateCodes).bestRoute, aircraft);
+                displayRoute(findBestRoute(sourceCode, destCode, intermediateCodes, aircraft), aircraft);
             } else {
-                displayRoute(runGeneticAlgorithm(sourceCode, destCode, intermediateCodes, aircraft).bestRoute, aircraft);
+                displayRoute(runGeneticAlgorithm(sourceCode, destCode, intermediateCodes, aircraft), aircraft);
             }
         }
     }
@@ -157,19 +168,15 @@ document.addEventListener('DOMContentLoaded', () => {
         let totalProfit = 0;
 
         for (let i = 0; i < route.length - 1; i++) {
-            const from = markers[route[i]];
-            const to = markers[route[i + 1]];
+            const m = calculateSegmentMetrics(markers[route[i]], markers[route[i + 1]], aircraft);
 
-            const m = calculateSegmentMetrics(from, to, aircraft);
             totalDistance += m.distance;
             totalProfit += m.profit;
 
-            console.log("LEG DEBUG:", route[i], "→", route[i + 1], m);
-
             distanceTableBody.innerHTML += `
                 <tr>
-                    <td>${from.ident}</td>
-                    <td>${to.ident}</td>
+                    <td>${route[i]}</td>
+                    <td>${route[i+1]}</td>
                     <td>${m.distance.toFixed(0)}</td>
                     <td>${m.passengers}</td>
                     <td>${m.revenue.toFixed(0)}</td>
@@ -182,13 +189,6 @@ document.addEventListener('DOMContentLoaded', () => {
         totalProfitCell.textContent = totalProfit.toFixed(0);
 
         infoBox.textContent = `Route: ${route.join(' → ')} | Profit: ₹${totalProfit.toFixed(0)}`;
-    }
-
-    function resetApplication() {
-        currentRouteLayers.clearLayers();
-        distanceTableBody.innerHTML = '';
-        totalDistCell.textContent = '';
-        totalProfitCell.textContent = '';
     }
 
     function calculateSegmentMetrics(from, to, aircraft) {
@@ -217,34 +217,63 @@ document.addEventListener('DOMContentLoaded', () => {
         const passengers = Math.min(aircraftCapacity * 0.85, segmentDemand.demand);
         const revenue = passengers * segmentDemand.avgFare;
 
-        // ✅ softened cost for profitability
-        const COST_PER_HOUR = 12;
-        const cost = (aircraftCapacity * COST_PER_HOUR) * time;
-
+        const cost = (aircraftCapacity * 12) * time;
         const profit = revenue - cost;
 
         return { distance, time, passengers, revenue, cost, profit };
     }
 
-    function findShortestPath(source, dest, intermediates) {
-        if (!intermediates.length) return { bestRoute: [source, dest] };
+    function findBestRoute(source, dest, intermediates, aircraft) {
+        if (!intermediates.length) return [source, dest];
+
         const permutations = getPermutations(intermediates);
         let bestRoute = [];
-        let minDist = Infinity;
+        let minCost = Infinity;
 
         permutations.forEach(p => {
-            const r = [source, ...p, dest];
-            let d = 0;
-            for (let i = 0; i < r.length - 1; i++) {
-                d += calculateSegmentMetrics(markers[r[i]], markers[r[i+1]], {}).distance;
+            const route = [source, ...p, dest];
+            let totalCost = 0;
+
+            for (let i = 0; i < route.length - 1; i++) {
+                const m = calculateSegmentMetrics(markers[route[i]], markers[route[i+1]], aircraft);
+                totalCost += calculateSmartCost(m);
             }
-            if (d < minDist) {
-                minDist = d;
-                bestRoute = r;
+
+            if (totalCost < minCost) {
+                minCost = totalCost;
+                bestRoute = route;
             }
         });
 
-        return { bestRoute };
+        return bestRoute;
+    }
+
+    function runGeneticAlgorithm(source, dest, intermediates, aircraft) {
+        if (!intermediates.length) return [source, dest];
+
+        const shuffle = arr => arr.slice().sort(() => Math.random() - 0.5);
+        let population = Array.from({ length: 30 }, () => shuffle(intermediates));
+
+        for (let g = 0; g < 80; g++) {
+            population = population.sort((a, b) => {
+                const sa = calcSmartScore([source, ...a, dest], aircraft);
+                const sb = calcSmartScore([source, ...b, dest], aircraft);
+                return sa - sb;
+            }).slice(0, 15);
+
+            population = population.concat(population.map(shuffle));
+        }
+
+        return [source, ...population[0], dest];
+    }
+
+    function calcSmartScore(route, aircraft) {
+        let total = 0;
+        for (let i = 0; i < route.length - 1; i++) {
+            const m = calculateSegmentMetrics(markers[route[i]], markers[route[i + 1]], aircraft);
+            total += calculateSmartCost(m);
+        }
+        return total;
     }
 
     function getPermutations(arr) {
@@ -255,29 +284,10 @@ document.addEventListener('DOMContentLoaded', () => {
         );
     }
 
-    function runGeneticAlgorithm(source, dest, intermediates, aircraft) {
-        if (!intermediates.length) return { bestRoute: [source, dest] };
-        const shuffle = arr => arr.slice().sort(() => Math.random() - 0.5);
-        let population = Array.from({ length: 30 }, () => shuffle(intermediates));
-
-        for (let g = 0; g < 80; g++) {
-            population = population.sort((a, b) => {
-                const pa = calcProfit([source, ...a, dest], aircraft);
-                const pb = calcProfit([source, ...b, dest], aircraft);
-                return pb - pa;
-            }).slice(0, 15);
-
-            population = population.concat(population.map(shuffle));
-        }
-
-        return { bestRoute: [source, ...population[0], dest] };
-    }
-
-    function calcProfit(route, aircraft) {
-        let sum = 0;
-        for (let i = 0; i < route.length - 1; i++) {
-            sum += calculateSegmentMetrics(markers[route[i]], markers[route[i + 1]], aircraft).profit;
-        }
-        return sum;
+    function resetApplication() {
+        currentRouteLayers.clearLayers();
+        distanceTableBody.innerHTML = '';
+        totalDistCell.textContent = '';
+        totalProfitCell.textContent = '';
     }
 });
