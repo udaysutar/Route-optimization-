@@ -1,22 +1,37 @@
+/* --- Theme --- */
+:root {
+    --bg: #eef3f8;
+    --panel: #ffffff;
+    --ink: #1f2a37;
+    --muted: #5b6b7b;
+    --border: #d8e1ea;
+    --accent: #0f5ea8;
+    --accent-2: #18a0fb;
+    --success: #1e7e34;
+    --danger: #b3261e;
+    --soft: #f7fafc;
+}
+
 /* --- General Layout & Typography --- */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: "Poppins", "Segoe UI", sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background-color: #f4f4f9;
-    color: #333;
+    background: linear-gradient(180deg, #e6f0fa 0%, #f6f9fc 100%);
+    color: var(--ink);
 }
 
 header {
-    background-color: #003366;
+    background: linear-gradient(90deg, #0f5ea8 0%, #18a0fb 100%);
     color: white;
-    padding: 12px 20px;
-    font-size: 1.2rem;
+    padding: 14px 24px;
+    font-size: 1.25rem;
     font-weight: 600;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    letter-spacing: 0.3px;
+    box-shadow: 0 6px 20px rgba(15, 94, 168, 0.2);
     z-index: 1001;
 }
 
@@ -24,39 +39,40 @@ header {
     display: flex;
     flex: 1;
     overflow: hidden;
+    gap: 0;
 }
 
 /* --- Sidebar Controls --- */
 .sidebar {
-    width: 500px;
-    padding: 20px;
-    background-color: #ffffff;
+    width: 420px;
+    padding: 20px 18px 24px;
+    background-color: var(--panel);
     overflow-y: auto;
-    border-right: 1px solid #971e1e;
+    border-right: 1px solid var(--border);
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
 .sidebar h2 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin-top: 0;
-    color: #003366;
-    border-bottom: 2px solid #005a9e;
+    color: var(--accent);
+    border-bottom: 2px solid #dce8f5;
     padding-bottom: 8px;
 }
 
 .sidebar label {
     font-weight: 600;
     font-size: 0.9rem;
-    margin-bottom: -5px;
-    color: #0d0c0c;
+    margin-bottom: -2px;
+    color: var(--ink);
 }
 
 .sidebar small {
     font-size: 0.75rem;
-    color: #666;
-    margin-top: -8px;
+    color: var(--muted);
+    margin-top: -6px;
 }
 
 .status-pill {
@@ -72,22 +88,28 @@ input[type="file"],
 input[type="number"],
 select {
     width: 100%;
-    padding: 8px;
-    border: 1px solid #020202;
-    border-radius: 4px;
+    padding: 10px 10px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
     font-size: 0.9rem;
     box-sizing: border-box;
-    
+    background-color: #ffffff;
+    box-shadow: 0 1px 0 rgba(16, 24, 40, 0.04);
 }
 
 input[type="file"] {
-    padding: 4px;
+    padding: 6px;
 }
 
 .input-group,
 .button-group {
     display: flex;
     gap: 10px;
+}
+
+.input-group input,
+.button-group button {
+    flex: 1;
 }
 
 .intermediate-stop {
@@ -100,9 +122,9 @@ input[type="file"] {
 }
 .intermediate-stop button {
     padding: 4px 8px;
-    background-color: #fce8e6;
-    color: #c5221f;
-    border: 1px solid #f9bdbb;
+    background-color: #f8d7da;
+    color: var(--danger);
+    border: 1px solid #f2b8b5;
     border-radius: 50%;
     cursor: pointer;
     line-height: 1;
@@ -111,37 +133,40 @@ input[type="file"] {
 
 /* --- Buttons --- */
 button {
-    padding: 10px;
+    padding: 10px 12px;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     font-size: 0.9rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: transform 0.08s ease, background-color 0.2s ease;
+}
+button:active {
+    transform: scale(0.98);
 }
 
 #addIntermediateBtn {
-    background-color: #e8f0fe;
-    color: #1967d2;
-    border: 1px solid #d2e3fc;
+    background-color: #e8f3ff;
+    color: #145da0;
+    border: 1px solid #cfe3fb;
 }
 #addIntermediateBtn:hover {
     background-color: #d2e3fc;
 }
 
 #drawRouteBtn, #optimizeRouteBtn {
-    flex: 1;
-    background-color: #005a9e;
+    background: linear-gradient(90deg, #0f5ea8 0%, #18a0fb 100%);
     color: white;
+    box-shadow: 0 6px 14px rgba(15, 94, 168, 0.2);
 }
 #drawRouteBtn:hover, #optimizeRouteBtn:hover {
-    background-color: #004a80;
+    background: linear-gradient(90deg, #0c4f8d 0%, #0f8fe0 100%);
 }
 
 #resetBtn {
     background-color: #fde2e2;
-    color: #b3261e;
-    border: 1px solid #f9bdbb;
+    color: var(--danger);
+    border: 1px solid #f3bcbc;
 }
 #resetBtn:hover {
     background-color: #f7c5c2;
@@ -152,11 +177,12 @@ button {
 #infoBox {
     margin-top: 10px;
     padding: 12px;
-    background-color: #eef1f3;
-    border-radius: 4px;
+    background-color: var(--soft);
+    border-radius: 8px;
     font-size: 0.85rem;
     line-height: 1.5;
     white-space: pre-wrap; /* Allows line breaks */
+    border: 1px solid var(--border);
 }
 
 #distanceTableContainer {
@@ -171,8 +197,9 @@ button {
 .table-wrapper {
     max-height: 250px;
     overflow-y: auto;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background-color: #ffffff;
 }
 
 #distanceTable {
@@ -185,7 +212,7 @@ button {
 #distanceTable td {
     padding: 8px;
     text-align: left;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #eef2f6;
 }
 #distanceTable th:nth-child(3),
 #distanceTable td:nth-child(3),
@@ -195,7 +222,7 @@ button {
 }
 
 #distanceTable thead th {
-    background-color: #95d5f0;
+    background-color: #e7f2ff;
     text-align: center;
     font-weight: 600;
     position: sticky;
@@ -204,8 +231,8 @@ button {
 
 #distanceTable tfoot td {
     font-weight: 700;
-    border-top: 2px solid #ccc;
-    background-color: #f7f7f7;
+    border-top: 2px solid #dce4ec;
+    background-color: #f6f9fc;
 }
 
 /* --- Map --- */
@@ -223,7 +250,7 @@ button {
     .sidebar {
         width: 100%;
         border-right: none;
-        border-bottom: 1px solid #971e1e;
+        border-bottom: 1px solid var(--border);
     }
 
     #map {

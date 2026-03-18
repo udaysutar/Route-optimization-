@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const infoBox = document.getElementById('infoBox');
     const distanceTableBody = document.querySelector('#distanceTable tbody');
     const totalDistCell = document.getElementById('totalDistanceCell');
+    const totalPassengersCell = document.getElementById('totalPassengersCell');
     const totalProfitCell = document.getElementById('totalProfitCell');
     const weatherStatus = document.getElementById('weatherStatus');
 
@@ -394,12 +395,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let totalDistance = 0;
         let totalProfit = 0;
+        let totalPassengers = 0;
 
         for (let i = 0; i < route.length - 1; i++) {
             const m = calculateSegmentMetrics(markers[route[i]], markers[route[i + 1]], aircraft);
 
             totalDistance += m.distance;
             totalProfit += m.profit;
+            totalPassengers += m.passengers;
 
             distanceTableBody.innerHTML += `
                 <tr>
@@ -414,6 +417,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         totalDistCell.textContent = totalDistance.toFixed(0);
+        totalPassengersCell.textContent = totalPassengers.toFixed(0);
         totalProfitCell.textContent = totalProfit.toFixed(0);
 
         infoBox.textContent = `Route: ${route.join(' -> ')} | Profit: Rs ${totalProfit.toFixed(0)}`;
@@ -534,6 +538,7 @@ document.addEventListener('DOMContentLoaded', () => {
         currentRouteLayers.clearLayers();
         distanceTableBody.innerHTML = '';
         totalDistCell.textContent = '';
+        totalPassengersCell.textContent = '';
         totalProfitCell.textContent = '';
         infoBox.textContent = '';
         sourceSelect.value = '';
