@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let airportData = [];
     let demandData = {};
+    let revenueData = {};
     let aircraftData = [];
     let markers = {};
     let currentRouteLayers = new L.FeatureGroup().addTo(map);
@@ -18,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const HUB_DEMAND_BOOST = 1.25;
 
     const csvUpload = document.getElementById('csvUpload');
-    const demandUpload = document.getElementById('demandUpload');
+    const revenueUpload = document.getElementById('revenueUpload');
     const aircraftUpload = document.getElementById('aircraftUpload');
     const weatherUpload = document.getElementById('weatherUpload');
     const aircraftSelect = document.getElementById('aircraftSelect');
@@ -37,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const weatherStatus = document.getElementById('weatherStatus');
 
     csvUpload.addEventListener('change', (e) => handleFileUpload(e, 'airports'));
-    demandUpload.addEventListener('change', (e) => handleFileUpload(e, 'demand'));
+    revenueUpload.addEventListener('change', (e) => handleFileUpload(e, 'revenue'));
     aircraftUpload.addEventListener('change', (e) => handleFileUpload(e, 'aircraft'));
     weatherUpload.addEventListener('change', (e) => handleFileUpload(e, 'weather'));
     addIntermediateBtn.addEventListener('click', addIntermediateDropdown);
@@ -80,22 +81,20 @@ document.addEventListener('DOMContentLoaded', () => {
                     populateAirportDropdowns();
                     updateHubSpoke();
                 } 
-                else if (type === 'demand') {
-                    demandData = results.data.reduce((obj, item) => {
-                        obj[item.ident] = {
-                            demand: parseInt(item.demand, 10),
-                            avgFare: parseFloat(item.avgFare)
-                        };
-                        return obj;
-                    }, {});
-                    updateHubSpoke();
-                } 
                 else if (type === 'aircraft') {
                     aircraftData = results.data.filter(ac => ac.type && ac.display_name);
                     aircraftSelect.innerHTML = aircraftData
                         .map((ac, i) => `<option value="${i}">${ac.display_name}</option>`)
                         .join('');
                 } 
+                else if (type === 'revenue') {
+                    revenueData = results.data.reduce((obj, item) => {
+                        if (!item.route) return obj;
+                        obj[item.route] = parseFloat(item.revenue) || 0;
+                        return obj;
+                    }, {});
+                    updateHubSpoke();
+                }
                 else if (type === 'weather') {
                     loadWeatherFromRows(results.data);
                 }
@@ -173,10 +172,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateHubSpoke() {
-        const demandEntries = airportData
+        let demandEntries = airportData
             .filter(ap => ap.ident && demandData[ap.ident] && !isNaN(demandData[ap.ident].demand))
             .map(ap => ({ ident: ap.ident, demand: demandData[ap.ident].demand }))
             .sort((a, b) => b.demand - a.demand);
+
+        if (!demandEntries.length && Object.keys(revenueData).length) {
+            const revenueByAirport = {};
+            Object.entries(revenueData).forEach(([route, revenue]) => {
+                const parts = route.split('-');
+                const from = parts[0];
+                const to = parts[1];
+                if (from) revenueByAirport[from] = (revenueByAirport[from] || 0) + revenue;
+                if (to) revenueByAirport[to] = (revenueByAirport[to] || 0) + revenue;
+            });
+
+            demandEntries = airportData
+                .filter(ap => ap.ident && revenueByAirport[ap.ident] && !isNaN(revenueByAirport[ap.ident]))
+                .map(ap => ({ ident: ap.ident, demand: revenueByAirport[ap.ident] }))
+                .sort((a, b) => b.demand - a.demand);
+        }
 
         const hubs = demandEntries.slice(0, HUB_COUNT).map(d => d.ident);
         hubAirports = new Set(hubs);
@@ -434,8 +449,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const demandBoost = hubAirports.has(to.ident) ? HUB_DEMAND_BOOST : 1;
         const boostedDemand = segmentDemand.demand * demandBoost;
-        const passengers = Math.min(aircraftCapacity * 0.85, boostedDemand);
-        const revenue = passengers * segmentDemand.avgFare;
+        const routeKey = `${from.ident}-${to.ident}`;
+        const revenueFromDataset = revenueData[routeKey];
+
+        let passengers;
+        let revenue;
+        if (typeof revenueFromDataset === 'number' && revenueFromDataset > 0) {
+            revenue = revenueFromDataset;
+            passengers = Math.min(aircraftCapacity * 0.85, revenue / segmentDemand.avgFare);
+        } else {
+            passengers = Math.min(aircraftCapacity * 0.85, boostedDemand);
+            revenue = passengers * segmentDemand.avgFare;
+        }
 
         const cost = (aircraftCapacity * 12) * time;
         const profit = revenue - cost;
